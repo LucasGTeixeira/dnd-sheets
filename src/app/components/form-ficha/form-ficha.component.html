@@ -11,7 +11,7 @@
             <input type="text" [(ngModel)]="characterSheet.class" name="classlevel" placeholder="Paladin" (ngModelChange)="getSavingThrowsByClass(characterSheet.class, characterSheet.level)"/>
           </li>
           <li>
-            <label for="race">Raça</label><input name="race" placeholder="Half-elf" />
+            <label for="race" >Raça</label><input name="race"[(ngModel)]="characterSheet.race" name="race" placeholder="Half-elf" />
           </li>
           <li>
             <label for="experiencepoints">Nível</label>
@@ -316,7 +316,8 @@
     </main>
     <div class="container">
       <div class="center">
-        <button type="submit" class="rpg-button">Enviar</button>
+        <button type="button" class="rpg-button" (click)="saveCharacter('save')">Cancelar</button>
+        <button type="button" class="rpg-button" (click)="cancelChanges('cancel')">Salvar</button>
       </div>
     </div>
   </form>

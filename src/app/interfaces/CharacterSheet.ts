@@ -1,4 +1,5 @@
 export interface CharacterSheet{
+    id : number,
     name : string,
     class : string,
     race : string,
@@ -61,4 +62,5 @@ export interface CharacterSheet{
     emeraldPlates: number,
     goldPlates: number,
     platinumPlates: number,
+    
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CharacterSheet } from '../../interfaces/CharacterSheet';
 import { CharacterSheetImp } from 'src/app/model/CharacterSheetImp';
+import { EmptyCharacterSHeet } from 'src/app/model/EmptyCharacterSheet';
 
 @Component({
   selector: 'app-form-ficha',
@@ -8,7 +9,8 @@ import { CharacterSheetImp } from 'src/app/model/CharacterSheetImp';
   styleUrls: ['./form-ficha.component.css']
 })
 export class FormFichaComponent {
-  characterSheet: CharacterSheet = new CharacterSheetImp;
+  @Input() characterSheet: CharacterSheet = new EmptyCharacterSHeet();
+  @Output() newItemEvent = new EventEmitter<string>();
 
   ngOnInit():void{
     this.getSavingThrowsByClass(this.characterSheet.class, this.characterSheet.level)
@@ -80,6 +82,14 @@ export class FormFichaComponent {
 
   changeSkillStatus(skillBoolean : boolean){
     skillBoolean = !skillBoolean
+  }
+
+  saveCharacter(value: string){
+    this.newItemEvent.emit(value)
+  }
+
+  cancelChanges(value : string){
+    this.newItemEvent.emit(value)
   }
 
 }

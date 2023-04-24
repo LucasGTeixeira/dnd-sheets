@@ -596,7 +596,9 @@ form.charsheet main section.equipment > div > textarea {
     color: #ffffff;
     border: 2px solid #ffffff;
     border-radius: 8px;
-    padding: 10px 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding: 10px 10px;
     font-size: 1.2rem;
     text-shadow: 2px 2px 2px #000000;
     box-shadow: 2px 2px 0px #000000;
@@ -604,8 +606,14 @@ form.charsheet main section.equipment > div > textarea {
   }
   
   .rpg-button:hover {
-    background-color: #ffffff;
+    background-color: #B0B0B0;
     color: #4d4d4d;
     text-shadow: none;
+    box-shadow: 2px 2px 0px #000000;
     box-shadow: none;
+  }
+
+  form{
+    margin-top: 200px;
+    margin-bottom: 200px;
   }

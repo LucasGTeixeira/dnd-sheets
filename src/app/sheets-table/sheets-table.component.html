@@ -1,3 +1,25 @@
-<div class="box">
-    <div></div>
+<div class="mainSheetslist" *ngIf="showForm == false">
+    <h2>Fichas</h2>
+    <div class="list">
+      <ul>
+        <li>Name</li>
+        <li>Race</li>
+        <li>Class</li>
+        <li>Level</li>
+        <li>CA</li>
+        <li></li>
+      </ul>
+      <ul *ngFor="let charactersSheet of charactersSheets">
+        <li data-label="Name">{{charactersSheet.name}}</li>
+        <li data-label="Race">{{charactersSheet.race}}</li>
+        <li data-label="Class">{{charactersSheet.class}}</li>
+        <li data-label="Level">{{charactersSheet.level}}</li>
+        <li data-label="CA">{{charactersSheet.ArmorClass}}</li>
+        <li data-label="View"><button class="image-button" (click)="changeMode(charactersSheet)"><img src="../../assets/olho.png" alt="ViewCharacter"></button></li>
+      </ul>
+    </div>
+</div>
+<!-- FICHA -->
+<div class="mainSheetForm" *ngIf="showForm == true">
+    <app-form-ficha [characterSheet]= "selectedCharacter" (newItemEvent)="saveOrCancelEvent($event)" ></app-form-ficha>
 </div>

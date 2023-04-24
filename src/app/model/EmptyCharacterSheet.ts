@@ -1,25 +1,25 @@
 import { CharacterSheet } from "../interfaces/CharacterSheet";
 
-export class CharacterSheetImp implements CharacterSheet {
+export class EmptyCharacterSHeet implements CharacterSheet {
     id!: number;
     name: string = '';
     class: string = '';
     race: string = '';
-    level: number = 2;
-    strength: number = 10;
-    dexterity: number = 10;
-    constitution: number = 10;
-    wisdom: number = 10;
-    inteligence: number = 10;
-    charisma: number = 10;
+    level: number = 0;
+    strength: number = 0;
+    dexterity: number = 0;
+    constitution: number = 0;
+    wisdom: number = 0;
+    inteligence: number = 0;
+    charisma: number = 0;
     ModStrength : number = 0;
-    ModDexterity : number = 0;
+    ModDexterity : number = 5;
     ModConstitution : number = 0;
     ModWisdom : number = 0;
     ModInteligence : number = 0;
     ModCharisma : number = 0;
     inspiration: boolean = false;
-    proficiencyBonus = 3;
+    proficiencyBonus = 2;
     ArmorClass: number = 0;
     Initiative: number = 0;
     Speed: number = 0;
@@ -64,14 +64,4 @@ export class CharacterSheetImp implements CharacterSheet {
     emeraldPlates:number = 0;
     goldPlates:number = 0;
     platinumPlates:number = 0;
-
-    constructor(id : number, name : string, classname : string, ca : number, level : number, race : string) {
-      this.id = id;
-      this.class = classname;
-      this.name = name;
-      this.level = level
-      this.ArmorClass = ca;
-      this.race = race;
-    }
-
   }
