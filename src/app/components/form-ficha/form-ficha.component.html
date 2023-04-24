@@ -132,92 +132,92 @@
               <ul>
                 <li>
                   <label for="Acrobatics">Acrobatics <span class="skill">(Dex)</span></label>
-                  <input name="Acrobatics" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModDexterity + (characterSheet.SkillAcrobatics ? characterSheet.proficiencyBonus : 0))" readonly />
+                  <input name="Acrobatics" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.dexterity) + (characterSheet.SkillAcrobatics ? characterSheet.proficiencyBonus : 0))" readonly />
                   <input name="Acrobatics-prof" type="checkbox" [(ngModel)]="characterSheet.SkillAcrobatics"/>
                 </li>
                 <li>
                   <label for="Animal Handling">Animal Handling <span class="skill">(Wis)</span></label>
-                  <input name="Animal Handling" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModWisdom + (characterSheet.SkillAnimalHandling ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Animal Handling" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.wisdom) + (characterSheet.SkillAnimalHandling ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Animal Handling-prof" type="checkbox" [(ngModel)]="characterSheet.SkillAnimalHandling"/>
                 </li>
                 <li>
                   <label for="Arcana">Arcana <span class="skill">(Int)</span></label>
-                  <input name="Arcana" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModInteligence + (characterSheet.SkillArcana ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Arcana" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.inteligence) + (characterSheet.SkillArcana ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Arcana-prof" type="checkbox" [(ngModel)]="characterSheet.SkillArcana"/>
                 </li>
                 <li>
                   <label for="Athletics">Athletics <span class="skill">(Str)</span></label>
-                  <input name="Athletics" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModStrength + (characterSheet.SkillAthletics ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Athletics" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.strength) + (characterSheet.SkillAthletics ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Athletics-prof" type="checkbox"[(ngModel)]="characterSheet.SkillAthletics"/>
                 </li>
                 <li>
                   <label for="Deception">Deception <span class="skill">(Cha)</span></label>
-                  <input name="Deception" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModCharisma + (characterSheet.SkillDeception ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Deception" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.charisma) + (characterSheet.SkillDeception ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Deception-prof" type="checkbox" [(ngModel)]="characterSheet.SkillDeception"/>
                 </li>
                 <li>
                   <label for="History">History <span class="skill">(Int)</span></label>
-                  <input name="History" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModInteligence + (characterSheet.SkillHistory ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="History" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.inteligence) + (characterSheet.SkillHistory ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="History-prof" type="checkbox" [(ngModel)]="characterSheet.SkillHistory"/>
                 </li>
                 <li>
                   <label for="Insight">Insight <span class="skill">(Wis)</span></label>
-                  <input name="Insight" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModWisdom + (characterSheet.SkillInsight ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Insight" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.wisdom) + (characterSheet.SkillInsight ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Insight-prof" type="checkbox" [(ngModel)]="characterSheet.SkillInsight"/>
                 </li>
                 <li>
                   <label for="Intimidation">Intimidation <span class="skill">(Cha)</span></label>
-                  <input name="Intimidation" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModCharisma + (characterSheet.SkillIntimidation ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Intimidation" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.charisma) + (characterSheet.SkillIntimidation ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Intimidation-prof" type="checkbox" [(ngModel)]="characterSheet.SkillIntimidation"/>
                 </li>
                 <li>
                   <label for="Investigation">Investigation <span class="skill">(Int)</span></label>
-                  <input name="Investigation" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModInteligence + (characterSheet.SkillInvestigation ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Investigation" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.inteligence) + (characterSheet.SkillInvestigation ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Investigation-prof" type="checkbox" [(ngModel)]="characterSheet.SkillInvestigation"/>
                 </li>
                 <li>
                   <label for="Medicine">Medicine <span class="skill">(Wis)</span></label>
-                  <input name="Medicine" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModWisdom + (characterSheet.SkillMedicine ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Medicine" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.wisdom) + (characterSheet.SkillMedicine ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Medicine-prof" type="checkbox" [(ngModel)]="characterSheet.SkillMedicine"/>
                 </li>
                 <li>
                   <label for="Nature">Nature <span class="skill">(Int)</span></label>
-                  <input name="Nature" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModInteligence + (characterSheet.SkillNature ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Nature" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.inteligence) + (characterSheet.SkillNature ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Nature-prof" type="checkbox" [(ngModel)]="characterSheet.SkillNature"/>
                 </li>
                 <li>
                   <label for="Perception">Perception <span class="skill">(Wis)</span></label>
-                  <input name="Perception" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModWisdom + (characterSheet.SkillPerception ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Perception" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.wisdom) + (characterSheet.SkillPerception ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Perception-prof" type="checkbox" [(ngModel)]="characterSheet.SkillPerception"/>
                 </li>
                 <li>
                   <label for="Performance">Performance <span class="skill">(Cha)</span></label>
-                  <input name="Performance" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModCharisma + (characterSheet.SkillPerformance ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Performance" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.charisma) + (characterSheet.SkillPerformance ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Performance-prof" type="checkbox" [(ngModel)]="characterSheet.SkillPerformance"/>
                 </li>
                 <li>
                   <label for="Persuasion">Persuasion <span class="skill">(Cha)</span></label>
-                  <input name="Persuasion" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModCharisma + (characterSheet.SkillPersuasion ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Persuasion" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.charisma) + (characterSheet.SkillPersuasion ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Persuasion-prof" type="checkbox" [(ngModel)]="characterSheet.SkillPersuasion"/>
                 </li>
                 <li>
                   <label for="Religion">Religion <span class="skill">(Int)</span></label>
-                  <input name="Religion" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModInteligence + (characterSheet.SkillReligion ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Religion" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.inteligence) + (characterSheet.SkillReligion ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Religion-prof" type="checkbox"[(ngModel)]="characterSheet.SkillReligion" />
                 </li>
                 <li>
                   <label for="Sleight of Hand">Sleight of Hand<span class="skill">(Dex)</span></label>
-                  <input name="Sleight of Hand" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModDexterity + (characterSheet.SkillSleightOfHand ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Sleight of Hand" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.dexterity) + (characterSheet.SkillSleightOfHand ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Sleight of Hand-prof" type="checkbox"[(ngModel)]="characterSheet.SkillSleightOfHand" />
                 </li>
                 <li>
                   <label for="Stealth">Stealth <span class="skill">(Dex)</span></label>
-                  <input name="Stealth" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModDexterity + (characterSheet.SkillStealth ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Stealth" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.dexterity) + (characterSheet.SkillStealth ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Stealth-prof" type="checkbox" [(ngModel)]="characterSheet.SkillStealth"/>
                 </li>
                 <li>
                   <label for="Survival">Survival <span class="skill">(Wis)</span></label>
-                  <input name="Survival" placeholder="+0" type="text" [value]="'+' + (characterSheet.ModWisdom + (characterSheet.SkillSurvival ? characterSheet.proficiencyBonus : 0))" readonly/>
+                  <input name="Survival" placeholder="+0" type="text" [value]="'+' + (getModifier(characterSheet.wisdom) + (characterSheet.SkillSurvival ? characterSheet.proficiencyBonus : 0))" readonly/>
                   <input name="Survival-prof" type="checkbox" [(ngModel)]="characterSheet.SkillSurvival"/>
                 </li>
               </ul>
@@ -273,11 +273,11 @@
           <div class="hitdice">
             <div>
               <div class="total">
-                <label for="totalhd">Total</label><input name="totalhd" placeholder="2d10" type="text" value="{{characterSheet.level + characterSheet.HitDice}}"/>
+                <label for="totalhd">Total</label><input name="totalhd" placeholder="2d10" type="text" value="{{characterSheet.level + getHitDice(characterSheet.class)}}"/>
               </div>
               <div class="remaining">
                 <label for="remaininghd">Hit Dice</label>
-                <input name="remaininghd" type="text" [(ngModel)]="characterSheet.HitDice"/>
+                <input name="remaininghd" type="text" value="{{getHitDice(characterSheet.class)}}"/>
               </div>
             </div>
           </div>  
