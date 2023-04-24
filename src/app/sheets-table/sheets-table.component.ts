@@ -11,6 +11,7 @@ import { EmptyCharacterSHeet } from '../model/EmptyCharacterSheet';
 export class SheetsTableComponent {
   charactersSheets : CharacterSheet[] = []
   selectedCharacter : CharacterSheet = new EmptyCharacterSHeet()
+  emptyCharacter : CharacterSheet = new EmptyCharacterSHeet()
   showForm = false
 
   ngOnInit(){
