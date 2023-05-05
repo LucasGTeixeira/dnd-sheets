@@ -38,9 +38,8 @@ export class FormFichaComponent {
       this.characterSheet.StStrength = true;
       this.characterSheet.StStrengthBonus = this.characterSheet.proficiencyBonus
     }
-    if(classname == "Bard" || classname == "Monk" || classname == "Ranger"){
+    if(classname == "Bard" || classname == "Monk" || classname == "Ranger" || classname =="Rogue"){
       this.characterSheet.StDexterity = true;
-
       this.characterSheet.StDexterityBonus = this.characterSheet.proficiencyBonus
     }
     if(classname == "Artificer" || classname == "Barbarian" || classname == "Fighter" || classname == "Artificer" || classname == "Sorcerer"){

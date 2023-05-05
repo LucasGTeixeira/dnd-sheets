@@ -10,7 +10,7 @@ import { EmptyCharacterSHeet } from '../model/EmptyCharacterSheet';
 })
 export class SheetsTableComponent {
   charactersSheets : CharacterSheet[] = []
-  selectedCharacter : CharacterSheet = new EmptyCharacterSHeet()
+  selectedCharacter!: CharacterSheet;
   emptyCharacter : CharacterSheet = new EmptyCharacterSHeet()
   showForm = false
 
@@ -20,6 +20,7 @@ export class SheetsTableComponent {
     let character3 = new CharacterSheetImp(3, "Bardur", "Paladin", 14, 6, "Dwarf")
     let character4 = new CharacterSheetImp(4, "Gandalf", "Wizard", 18, 20, "Human")
     this.charactersSheets.push(character1, character2, character3, character4)
+
   }
 
   changeMode(character : CharacterSheet){
