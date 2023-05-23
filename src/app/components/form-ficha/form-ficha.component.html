@@ -8,14 +8,14 @@
         <ul>
           <li>
             <label for="classlevel">Classe</label>
-            <input type="text" [(ngModel)]="characterSheet.class" name="classlevel" placeholder="Paladin" (ngModelChange)="getSavingThrowsByClass(characterSheet.class, characterSheet.level)"/>
+            <input type="text" [(ngModel)]="characterSheet.classname" name="classlevel" placeholder="Paladin" (ngModelChange)="getSavingThrowsByClass(characterSheet.classname, characterSheet.level)"/>
           </li>
           <li>
             <label for="race" >Raça</label><input name="race"[(ngModel)]="characterSheet.race" name="race" placeholder="Half-elf" />
           </li>
           <li>
             <label for="experiencepoints">Nível</label>
-            <input [(ngModel)]="characterSheet.level" name="experiencepoints" placeholder="5" (ngModelChange)="getSavingThrowsByClass(characterSheet.class, characterSheet.level)"/>
+            <input [(ngModel)]="characterSheet.level" name="experiencepoints" placeholder="5" (ngModelChange)="getSavingThrowsByClass(characterSheet.classname, characterSheet.level)"/>
           </li>
         </ul>
       </section>
@@ -273,11 +273,11 @@
           <div class="hitdice">
             <div>
               <div class="total">
-                <label for="totalhd">Total</label><input name="totalhd" placeholder="2d10" type="text" value="{{characterSheet.level + getHitDice(characterSheet.class)}}"/>
+                <label for="totalhd">Total</label><input name="totalhd" placeholder="2d10" type="text" value="{{characterSheet.level + getHitDice(characterSheet.classname)}}"/>
               </div>
               <div class="remaining">
                 <label for="remaininghd">Hit Dice</label>
-                <input name="remaininghd" type="text" value="{{getHitDice(characterSheet.class)}}"/>
+                <input name="remaininghd" type="text" value="{{getHitDice(characterSheet.classname)}}"/>
               </div>
             </div>
           </div>  

@@ -3,7 +3,7 @@ import { CharacterSheet } from "../interfaces/CharacterSheet";
 export class EmptyCharacterSHeet implements CharacterSheet {
     id!: number;
     name: string = '';
-    class: string = '';
+    classname: string = '';
     race: string = '';
     level: number = 0;
     strength: number = 0;

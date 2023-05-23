@@ -1,7 +1,7 @@
 export interface CharacterSheet{
     id : number,
     name : string,
-    class : string,
+    classname : string,
     race : string,
     level : number,
     strength : number,

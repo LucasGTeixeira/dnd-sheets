@@ -3,7 +3,7 @@ import { CharacterSheet } from "../interfaces/CharacterSheet";
 export class CharacterSheetImp implements CharacterSheet {
     id!: number;
     name: string = '';
-    class: string = '';
+    classname: string = '';
     race: string = '';
     level: number = 2;
     strength: number = 10;
@@ -67,7 +67,7 @@ export class CharacterSheetImp implements CharacterSheet {
 
     constructor(id : number, name : string, classname : string, ca : number, level : number, race : string) {
       this.id = id;
-      this.class = classname;
+      this.classname = classname;
       this.name = name;
       this.level = level
       this.ArmorClass = ca;

@@ -13,7 +13,7 @@ export class FormFichaComponent {
   @Output() newItemEvent = new EventEmitter<string>();
 
   ngOnInit():void{
-    this.getSavingThrowsByClass(this.characterSheet.class, this.characterSheet.level)
+    this.getSavingThrowsByClass(this.characterSheet.classname, this.characterSheet.level)
   }
   getModifier(attribute: number): number {
     return Math.floor((attribute - 10) / 2);
