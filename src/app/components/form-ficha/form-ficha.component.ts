@@ -1,15 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CharacterSheet } from '../../interfaces/CharacterSheet';
 import { CharacterSheetImp } from 'src/app/model/CharacterSheetImp';
-import { EmptyCharacterSHeet } from 'src/app/model/EmptyCharacterSheet';
-
+import { EmptyCharacterSheet } from 'src/app/model/EmptyCharacterSheet'
 @Component({
   selector: 'app-form-ficha',
   templateUrl: './form-ficha.component.html',
   styleUrls: ['./form-ficha.component.css']
 })
 export class FormFichaComponent {
-  @Input() characterSheet: CharacterSheet = new EmptyCharacterSHeet();
+  @Input() characterSheet: CharacterSheet = new EmptyCharacterSheet();
   @Output() newItemEvent = new EventEmitter<string>();
 
   ngOnInit():void{
@@ -26,37 +25,37 @@ export class FormFichaComponent {
   }
 
   getSavingThrowsByClass(classname : string, level : number):void{
-    this.characterSheet.StStrength = false;
-    this.characterSheet.StDexterity = false;
-    this.characterSheet.StConstitution = false;
-    this.characterSheet.StWisdom = false;
-    this.characterSheet.StInteligence = false;
-    this.characterSheet.StCharisma = false;
+    this.characterSheet.stStrength = false;
+    this.characterSheet.stDexterity = false;
+    this.characterSheet.stConstitution = false;
+    this.characterSheet.stWisdom = false;
+    this.characterSheet.stIntelligence = false;
+    this.characterSheet.stCharisma = false;
     
     this.characterSheet.proficiencyBonus = this.getproficiencyBonus(level)
     if(classname == "Fighter" || classname == "Barbarian" || classname == "Monk" || classname == "Ranger"){
-      this.characterSheet.StStrength = true;
-      this.characterSheet.StStrengthBonus = this.characterSheet.proficiencyBonus
+      this.characterSheet.stStrength = true;
+      this.characterSheet.stStrengthBonus = this.characterSheet.proficiencyBonus
     }
     if(classname == "Bard" || classname == "Monk" || classname == "Ranger" || classname =="Rogue"){
-      this.characterSheet.StDexterity = true;
-      this.characterSheet.StDexterityBonus = this.characterSheet.proficiencyBonus
+      this.characterSheet.stDexterity = true;
+      this.characterSheet.stDexterityBonus = this.characterSheet.proficiencyBonus
     }
     if(classname == "Artificer" || classname == "Barbarian" || classname == "Fighter" || classname == "Artificer" || classname == "Sorcerer"){
-      this.characterSheet.StConstitution = true;
-      this.characterSheet.StConstitutionBonus = this.characterSheet.proficiencyBonus
+      this.characterSheet.stConstitution = true;
+      this.characterSheet.stConstitutionBonus = this.characterSheet.proficiencyBonus
     }
     if(classname == "Cleric" || classname == "Druid" || classname == "Paladin" || classname == "Warlock" || classname == "Wizard"){
-      this.characterSheet.StWisdom = true;
-      this.characterSheet.StWisdomBonus = this.characterSheet.proficiencyBonus
+      this.characterSheet.stWisdom = true;
+      this.characterSheet.stWisdomBonus = this.characterSheet.proficiencyBonus
     }
     if(classname == "Artificer" || classname == "Druid" || classname == "Rogue" || classname == "Wizard"){
-      this.characterSheet.StInteligence = true;
-      this.characterSheet.StInteligenceBonus = this.characterSheet.proficiencyBonus
+      this.characterSheet.stIntelligence = true;
+      this.characterSheet.stIntelligenceBonus = this.characterSheet.proficiencyBonus
     }
     if(classname == "Bard" || classname == "Cleric" || classname == "Paladin" || classname == "Sorcerer" || classname == "Warlock"){
-      this.characterSheet.StCharisma = true;
-      this.characterSheet.StCharismaBonus = this.characterSheet.proficiencyBonus
+      this.characterSheet.stCharisma = true;
+      this.characterSheet.stCharismaBonus = this.characterSheet.proficiencyBonus
     }
   }
 

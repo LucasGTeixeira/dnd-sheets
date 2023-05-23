@@ -1,66 +1,67 @@
-export interface CharacterSheet{
-    id : number,
-    name : string,
-    classname : string,
-    race : string,
-    level : number,
-    strength : number,
-    dexterity : number,
-    constitution : number,
-    wisdom : number,
-    inteligence : number,
-    charisma : number,
-    ModStrength : number,
-    ModDexterity : number,
-    ModConstitution : number,
-    ModWisdom : number,
-    ModInteligence : number,
-    ModCharisma : number,
-    inspiration : boolean,
-    proficiencyBonus : number,
-    ArmorClass : number,
-    Initiative : number
-    Speed : number,
-    currentHP : number,
-    maxHp: number,
-    tempHP : number,
-    HitDice : string,
-    StStrength : boolean,
-    StDexterity : boolean,
-    StConstitution : boolean,
-    StWisdom : boolean,
-    StInteligence : boolean,
-    StCharisma : boolean,
-    StStrengthBonus : number,
-    StDexterityBonus : number,
-    StConstitutionBonus : number,
-    StWisdomBonus : number,
-    StInteligenceBonus : number,
-    StCharismaBonus : number,
-    SkillAcrobatics : boolean,
-    SkillAnimalHandling : boolean,
-    SkillArcana : boolean,
-    SkillAthletics : boolean,
-    SkillDeception : boolean,
-    SkillHistory : boolean,
-    SkillInsight : boolean,
-    SkillIntimidation : boolean,
-    SkillInvestigation : boolean,
-    SkillMedicine : boolean,
-    SkillNature : boolean,
-    SkillPerception : boolean,
-    SkillPerformance : boolean,
-    SkillPersuasion : boolean,
-    SkillReligion : boolean,
-    SkillSleightOfHand : boolean,
-    SkillStealth : boolean,
-    SkillSurvival : boolean,
-    passiveWisdom : number,
-    equipaments : string,
-    copperPlates : number,
-    silverPlates: number,
-    emeraldPlates: number,
-    goldPlates: number,
-    platinumPlates: number,
-    
-}
+export interface CharacterSheet {
+    id: number;
+    name: string;
+    classname: string;
+    race: string;
+    level: number;
+    strength: number;
+    dexterity: number;
+    constitution: number;
+    wisdom: number;
+    intelligence: number;
+    charisma: number;
+    modStrength: number;
+    modDexterity: number;
+    modConstitution: number;
+    modWisdom: number;
+    modIntelligence: number;
+    modCharisma: number;
+    inspiration: boolean;
+    proficiencyBonus: number;
+    armorClass: number;
+    initiative: number;
+    speed: number;
+    currentHP: number;
+    maxHP: number;
+    tempHP: number;
+    hitDice: string;
+    stStrength: boolean;
+    stDexterity: boolean;
+    stConstitution: boolean;
+    stWisdom: boolean;
+    stIntelligence: boolean;
+    stCharisma: boolean;
+    stStrengthBonus: number;
+    stDexterityBonus: number;
+    stConstitutionBonus: number;
+    stWisdomBonus: number;
+    stIntelligenceBonus: number;
+    stCharismaBonus: number;
+    skillAcrobatics: boolean;
+    skillAnimalHandling: boolean;
+    skillArcana: boolean;
+    skillAthletics: boolean;
+    skillDeception: boolean;
+    skillHistory: boolean;
+    skillInsight: boolean;
+    skillIntimidation: boolean;
+    skillInvestigation: boolean;
+    skillMedicine: boolean;
+    skillNature: boolean;
+    skillPerception: boolean;
+    skillPerformance: boolean;
+    skillPersuasion: boolean;
+    skillReligion: boolean;
+    skillSleightOfHand: boolean;
+    skillStealth: boolean;
+    skillSurvival: boolean;
+    passiveWisdom: number;
+    equipment: string;
+    copperPieces: number;
+    silverPieces: number;
+    emeraldPieces: number;
+    goldPieces: number;
+    platinumPieces: number;
+    owner: number;
+  }
+  

@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { CharacterSheet } from '../interfaces/CharacterSheet';
 import { CharacterSheetImp } from '../model/CharacterSheetImp';
-import { EmptyCharacterSHeet } from '../model/EmptyCharacterSheet';
-
+import { EmptyCharacterSheet } from 'src/app/model/EmptyCharacterSheet'
 @Component({
   selector: 'app-sheets-table',
   templateUrl: './sheets-table.component.html',
@@ -11,7 +10,7 @@ import { EmptyCharacterSHeet } from '../model/EmptyCharacterSheet';
 export class SheetsTableComponent {
   charactersSheets : CharacterSheet[] = []
   selectedCharacter!: CharacterSheet;
-  emptyCharacter : CharacterSheet = new EmptyCharacterSHeet()
+  emptyCharacter : CharacterSheet = new EmptyCharacterSheet()
   showForm = false
 
   ngOnInit(){
@@ -33,7 +32,7 @@ export class SheetsTableComponent {
   }
 
   newCharacter(){
-    this.selectedCharacter = new EmptyCharacterSHeet()
+    this.selectedCharacter = new EmptyCharacterSheet()
     this.showForm = true
   }
 
