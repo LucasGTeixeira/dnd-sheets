@@ -7,12 +7,16 @@ import { CharacterSheet } from '../interfaces/CharacterSheet';
   providedIn: 'root'
 })
 export class CharacterSheetLoaderServiceService {
-  private baseUrl = 'http://localhost8080/Owner'
+  private baseUrl = 'http://localhost8080/characterSheets'
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(id : number): Observable<CharacterSheet[]>{
-    return this.http.get<CharacterSheet[]>(`${this.baseUrl}/${id}`)
+  getPlayerCharacters(id : number): Observable<CharacterSheet[]>{
+    return this.http.get<CharacterSheet[]>(this.baseUrl)
+  }
+
+  getAllCharacters(): Observable<CharacterSheet[]>{
+    return this.http.get<CharacterSheet[]>(this.baseUrl)
   }
   
   createCharacter(characterSheet: CharacterSheet): Observable<any> {

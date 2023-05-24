@@ -19,7 +19,6 @@ export class SheetsTableComponent {
     let character3 = new CharacterSheetImp(3, "Bardur", "Paladin", 14, 6, "Dwarf")
     let character4 = new CharacterSheetImp(4, "Gandalf", "Wizard", 18, 20, "Human")
     this.charactersSheets.push(character1, character2, character3, character4)
-
   }
 
   changeMode(character : CharacterSheet){

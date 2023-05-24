@@ -8,8 +8,9 @@ import { EmptyCharacterSheet } from 'src/app/model/EmptyCharacterSheet'
   styleUrls: ['./form-ficha.component.css']
 })
 export class FormFichaComponent {
-  @Input() characterSheet: CharacterSheet = new EmptyCharacterSheet();
+  @Input() characterSheet!: CharacterSheet;
   @Output() newItemEvent = new EventEmitter<string>();
+  BackupSheet : CharacterSheet = this.characterSheet;
 
   ngOnInit():void{
     this.getSavingThrowsByClass(this.characterSheet.classname, this.characterSheet.level)
@@ -83,11 +84,13 @@ export class FormFichaComponent {
   }
 
   saveCharacter(value: string){
-    this.newItemEvent.emit(value)
+    this.newItemEvent.emit('save')
   }
 
   cancelChanges(value : string){
-    this.newItemEvent.emit(value)
+    this.characterSheet = this.BackupSheet
+    console.log(this.BackupSheet)
+    this.newItemEvent.emit('cancel')
   }
 
 }
