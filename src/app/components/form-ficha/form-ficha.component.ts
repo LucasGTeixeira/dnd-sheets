@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CharacterSheet } from '../../interfaces/CharacterSheet';
 import { CharacterSheetImp } from 'src/app/model/CharacterSheetImp';
 import { EmptyCharacterSheet } from 'src/app/model/EmptyCharacterSheet'
+import { CharacterSheetLoaderServiceService } from 'src/app/services/character-sheet-loader-service.service';
 @Component({
   selector: 'app-form-ficha',
   templateUrl: './form-ficha.component.html',
@@ -10,11 +11,16 @@ import { EmptyCharacterSheet } from 'src/app/model/EmptyCharacterSheet'
 export class FormFichaComponent {
   @Input() characterSheet!: CharacterSheet;
   @Output() newItemEvent = new EventEmitter<string>();
-  BackupSheet : CharacterSheet = this.characterSheet;
+  backupData: CharacterSheet = new EmptyCharacterSheet;;
 
-  ngOnInit():void{
-    this.getSavingThrowsByClass(this.characterSheet.classname, this.characterSheet.level)
+  constructor(private charService : CharacterSheetLoaderServiceService){}
+  
+
+  ngOnInit(): void {
+    this.backupData = { ...this.characterSheet };
+    this.getSavingThrowsByClass(this.characterSheet.classname, this.characterSheet.level);
   }
+  
   getModifier(attribute: number): number {
     return Math.floor((attribute - 10) / 2);
   }
@@ -83,14 +89,21 @@ export class FormFichaComponent {
     skillBoolean = !skillBoolean
   }
 
-  saveCharacter(value: string){
-    this.newItemEvent.emit('save')
-  }
+  saveChanges(value: string) {
+  this.charService.updateCharacter(this.characterSheet).subscribe(
+    () => {
+      this.newItemEvent.emit(value);
+    },
+    () => {
+    }
+  );
+}
 
   cancelChanges(value : string){
-    this.characterSheet = this.BackupSheet
-    console.log(this.BackupSheet)
-    this.newItemEvent.emit('cancel')
+    console.log(this.characterSheet)
+    this.characterSheet = this.backupData
+    console.log(this.characterSheet)
+    this.newItemEvent.emit(value)
   }
 
 }

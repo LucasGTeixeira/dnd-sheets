@@ -7,7 +7,7 @@ import { CharacterSheet } from '../interfaces/CharacterSheet';
   providedIn: 'root'
 })
 export class CharacterSheetLoaderServiceService {
-  private baseUrl = 'http://localhost8080/characterSheets'
+  private baseUrl = 'http://localhost:8080/characterSheets'
 
   constructor(private http: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class CharacterSheetLoaderServiceService {
   }
 
   updateCharacter(characterSheet: CharacterSheet): Observable<any> {
-    const url = `${this.baseUrl}/${characterSheet.id}`;
+    const url = 'http://localhost:8080/characterSheets';
     return this.http.put<any>(url, characterSheet);
   }
 

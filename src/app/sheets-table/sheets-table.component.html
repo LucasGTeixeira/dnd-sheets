@@ -15,7 +15,8 @@
         <li data-label="Class">{{charactersSheet.classname}}</li>
         <li data-label="Level">{{charactersSheet.level}}</li>
         <li data-label="CA">{{charactersSheet.armorClass}}</li>
-        <li data-label="View"><button class="image-button" (click)="changeMode(charactersSheet)"><img src="../../assets/olho.png" alt="ViewCharacter"></button></li>
+        <li data-label="View"><button class="image-button" (click)="changeMode(charactersSheet)"><img src="../../assets/botao-editar.png" alt="ViewCharacter"></button></li>
+        <li data-label="Delete"><button class="image-button" (click)="removeCharacter(charactersSheet)"><img src="../../assets/remover.png" alt="removeCharacter"></button></li>
       </ul>
     </div>
     <button class="plus-button" (click)="changeMode(emptyCharacter)"><img src="../../assets/mais.png" alt="NewCharacter"></button>
