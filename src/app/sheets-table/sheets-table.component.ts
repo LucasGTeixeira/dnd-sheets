@@ -3,6 +3,9 @@ import { CharacterSheet } from '../interfaces/CharacterSheet';
 import { EmptyCharacterSheet } from 'src/app/model/EmptyCharacterSheet'
 import { CharacterSheetLoaderServiceService } from '../services/character-sheet-loader-service.service';
 import { concatMap } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteDialogComponent } from '../components/delete-dialog/delete-dialog.component';
+
 @Component({
   selector: 'app-sheets-table',
   templateUrl: './sheets-table.component.html',
@@ -11,21 +14,17 @@ import { concatMap } from 'rxjs/operators';
 export class SheetsTableComponent {
   charactersSheets : CharacterSheet[] = []
   selectedCharacter!: CharacterSheet;
-  emptyCharacter : CharacterSheet = new EmptyCharacterSheet()
+  emptyCharacter: CharacterSheet = new EmptyCharacterSheet;
   showForm = false
 
-  constructor(private characterService : CharacterSheetLoaderServiceService){}
+  constructor(private dialogRef: MatDialog, private characterService : CharacterSheetLoaderServiceService){}
 
   ngOnInit(){
-    // let character1 = new CharacterSheetImp(1, "Aragorn", "Fighter", 15, 6, "Human")
-    // let character2 = new CharacterSheetImp(2, "Legolas", "Barbarian", 16, 3, "Elf")
-    // let character3 = new CharacterSheetImp(3, "Bardur", "Paladin", 14, 6, "Dwarf")
-    // let character4 = new CharacterSheetImp(4, "Gandalf", "Wizard", 18, 20, "Human")
-    // this.charactersSheets.push(character1, character2, character3, character4)
     this.getCharacters();
   }
 
   changeMode(character : CharacterSheet){
+    this.emptyCharacter = new EmptyCharacterSheet();
     this.selectedCharacter = character
     this.showForm = true
   }
@@ -40,15 +39,31 @@ export class SheetsTableComponent {
   }
 
   removeCharacter(character: CharacterSheet) {
-    this.characterService.deleteCharacter(character.id)
-      .pipe(concatMap(() => this.characterService.getAllCharacters()))
-      .subscribe({
-        next: (response) => {
-          this.charactersSheets = response;
-          console.log(this.charactersSheets);
-        },
-        error: () => {}
-      });
+    const resultDialog = this.dialogRef.open(DeleteDialogComponent, {
+      data: { 
+        character : {
+          name : character.name,
+          level : character.level
+        }
+      }
+    });
+
+    resultDialog.afterClosed().subscribe({
+      next: (value) => {
+        if(value == true){
+          this.characterService.deleteCharacter(character.id)
+          .pipe(concatMap(() => this.characterService.getAllCharacters()))
+          .subscribe({
+          next: (response) => {
+            this.charactersSheets = response;
+            console.log(this.charactersSheets);
+          },
+          error: () => {}
+          });
+        }
+      }
+    })
+    
   }
 
   getCharacters(){

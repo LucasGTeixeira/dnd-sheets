@@ -63,8 +63,7 @@ export class EmptyCharacterSheet implements CharacterSheet {
   silverPieces: number = 0;  
   emeraldPieces: number = 0;  
   goldPieces: number = 0;  
-  platinumPieces: number = 0;  
-  owner: number = 1;  
+  platinumPieces: number = 0;   
 
   constructor() {
     

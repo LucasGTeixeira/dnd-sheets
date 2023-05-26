@@ -6,19 +6,25 @@ import { AppComponent } from './app.component';
 import { FormFichaComponent } from './components/form-ficha/form-ficha.component';
 import { SheetsTableComponent } from './sheets-table/sheets-table.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
     AppComponent,
 
     FormFichaComponent,
-     SheetsTableComponent
+     SheetsTableComponent,
+     DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -62,6 +62,5 @@ export interface CharacterSheet {
     emeraldPieces: number;
     goldPieces: number;
     platinumPieces: number;
-    owner: number;
   }
   

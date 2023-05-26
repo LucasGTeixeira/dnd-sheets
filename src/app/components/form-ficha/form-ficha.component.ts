@@ -11,13 +11,18 @@ import { CharacterSheetLoaderServiceService } from 'src/app/services/character-s
 export class FormFichaComponent {
   @Input() characterSheet!: CharacterSheet;
   @Output() newItemEvent = new EventEmitter<string>();
-  backupData: CharacterSheet = new EmptyCharacterSheet;;
+  backupData: CharacterSheet = new EmptyCharacterSheet;
+  sheetMode : String = '';
 
   constructor(private charService : CharacterSheetLoaderServiceService){}
   
 
   ngOnInit(): void {
-    this.backupData = { ...this.characterSheet };
+    if(this.characterSheet.name === ''){
+      this.sheetMode = 'add'
+    }else{
+      this.backupData = { ...this.characterSheet };
+    }
     this.getSavingThrowsByClass(this.characterSheet.classname, this.characterSheet.level);
   }
   
@@ -90,15 +95,25 @@ export class FormFichaComponent {
   }
 
   saveChanges(value: string) {
-  this.charService.updateCharacter(this.characterSheet).subscribe(
-    () => {
+  if(this.sheetMode == 'add'){
+    console.log("chegou no add")
+    this.charService.createCharacter(this.characterSheet).subscribe(() => {
       this.newItemEvent.emit(value);
     },
     () => {
     }
   );
+  }
+  else{
+    this.charService.updateCharacter(this.characterSheet).subscribe(
+      () => {
+        this.newItemEvent.emit(value);
+      },
+      () => {
+      }
+    );
+  }
 }
-
   cancelChanges(value : string){
     console.log(this.characterSheet)
     this.characterSheet = this.backupData

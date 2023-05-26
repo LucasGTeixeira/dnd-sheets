@@ -64,7 +64,6 @@ export class CharacterSheetImp implements CharacterSheet {
   emeraldPieces: number = 0;  // Corrected naming convention (camelCase)
   goldPieces: number = 0;  // Corrected naming convention (camelCase)
   platinumPieces: number = 0;  // Corrected naming convention (camelCase)
-  owner: number = 1;  // Assuming `owner` is the ID of the player owner
 
   constructor(id: number, name: string, classname: string, ca: number, level: number, race: string) {
     this.id = id;

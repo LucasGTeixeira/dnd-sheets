@@ -29,7 +29,7 @@ form.charsheet {
     left: 0;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 10px;
+    line-height: 1;
 }
 form.charsheet div.textblock {
     display: flex;

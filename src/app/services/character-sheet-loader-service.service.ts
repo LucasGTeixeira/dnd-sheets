@@ -20,7 +20,8 @@ export class CharacterSheetLoaderServiceService {
   }
   
   createCharacter(characterSheet: CharacterSheet): Observable<any> {
-    return this.http.post<any>(this.baseUrl, characterSheet);
+    const url = 'http://localhost:8080/characterSheets';
+    return this.http.post<any>(url, characterSheet);
   }
 
   updateCharacter(characterSheet: CharacterSheet): Observable<any> {

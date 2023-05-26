@@ -2,18 +2,37 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
 
 body {
-  background-color:#eee;
-  color:#444;
-  font-family:sans-serif;
+  background-color: #eee;
+  color: #444;
+  font-family: sans-serif;
+}
+
+.list {
+  display: table;
+  margin: 1em auto;
+  width: 50%; 
 }
 
 .list ul:nth-child(odd) {
-  background-color:#ddd;
+  background-color: #ddd;
 }
 
 .list ul:nth-child(even) {
-  background-color:#fff;
+  background-color: #fff;
 }
+
+h2 {
+  font-size: 60px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 40px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 
 /* big */
 @media screen and (min-width:600px) {
@@ -80,6 +99,7 @@ body {
   
   .list p {
     margin:-1em 0 0 50%;
+    font-size: 25px;
   }
   
 }

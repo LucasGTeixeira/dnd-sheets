@@ -1,27 +1,62 @@
 <div class="mainSheetslist" *ngIf="showForm == false">
-    <h2>Fichas</h2>
-    <div class="list">
-      <ul>
-        <li>Name</li>
-        <li>Race</li>
-        <li>Class</li>
-        <li>Level</li>
-        <li>CA</li>
-        <li></li>
-      </ul>
-      <ul *ngFor="let charactersSheet of charactersSheets">
-        <li data-label="Name">{{charactersSheet.name}}</li>
-        <li data-label="Race">{{charactersSheet.race}}</li>
-        <li data-label="Class">{{charactersSheet.classname}}</li>
-        <li data-label="Level">{{charactersSheet.level}}</li>
-        <li data-label="CA">{{charactersSheet.armorClass}}</li>
-        <li data-label="View"><button class="image-button" (click)="changeMode(charactersSheet)"><img src="../../assets/botao-editar.png" alt="ViewCharacter"></button></li>
-        <li data-label="Delete"><button class="image-button" (click)="removeCharacter(charactersSheet)"><img src="../../assets/remover.png" alt="removeCharacter"></button></li>
-      </ul>
-    </div>
-    <button class="plus-button" (click)="changeMode(emptyCharacter)"><img src="../../assets/mais.png" alt="NewCharacter"></button>
+  <h2>Suas Fichas</h2>
+  <div class="list">
+    <ul>
+      <li>
+        <span class="list-label">Name</span>
+      </li>
+      <li>
+        <span class="list-label">Race</span>
+      </li>
+      <li>
+        <span class="list-label">Class</span>
+      </li>
+      <li>
+        <span class="list-label">Level</span>
+      </li>
+      <li>
+        <span class="list-label">CA</span>
+      </li>
+      <li>
+        <span class="list-label">Edit</span>
+      </li>
+      <li>
+        <span class="list-label">Remove</span>
+      </li>
+    </ul>
+    <ul *ngFor="let charactersSheet of charactersSheets">
+      <li tabindex="0">
+        <span class="list-label" data-label="Name">{{charactersSheet.name}}</span>
+      </li>
+      <li tabindex="0">
+        <span class="list-label" data-label="Race">{{charactersSheet.race}}</span>
+      </li>
+      <li tabindex="0">
+        <span class="list-label" data-label="Class">{{charactersSheet.classname}}</span>
+      </li>
+      <li tabindex="0">
+        <span class="list-label" data-label="Level">{{charactersSheet.level}}</span>
+      </li>
+      <li tabindex="0">
+        <span class="list-label" data-label="CA">{{charactersSheet.armorClass}}</span>
+      </li>
+      <li>
+        <button class="image-button" (click)="changeMode(charactersSheet)">
+          <img src="../../assets/botao-editar.png" alt="ViewCharacter">
+        </button>
+      </li>
+      <li>
+        <button class="image-button" (click)="removeCharacter(charactersSheet)">
+          <img src="../../assets/remover.png" alt="removeCharacter">
+        </button>
+      </li>
+    </ul>
+  </div>
+  <button class="plus-button" (click)="changeMode(emptyCharacter)">
+    <img src="../../assets/mais.png" alt="NewCharacter">
+  </button>
 </div>
 <!-- FICHA -->
 <div class="mainSheetForm" *ngIf="showForm == true">
-    <app-form-ficha [characterSheet]= "selectedCharacter" (newItemEvent)="saveOrCancelEvent($event)" ></app-form-ficha>
+  <app-form-ficha [characterSheet]="selectedCharacter" (newItemEvent)="saveOrCancelEvent($event)"></app-form-ficha>
 </div>
